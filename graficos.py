@@ -1,14 +1,14 @@
 from tkinter import *
 
-import tkinter as mapview
+import tkinter
+import tkintermapview
 import tkinter as tk
 import json
 import customtkinter
 
 raiz=tk.Tk()
-raiz=Tk()
 
-raiz.title=tk.Label(raiz, text="Eventos Musicales", font=("Roboto", 12), bg="#2F242C")
+raiz.title=("Eventos Musicales")
 
 raiz.resizable(True,False)
 
@@ -18,7 +18,7 @@ raiz.config(bg="#ffc8dd")
 
 class ListaDeEventosApp(tk,Tk):
 
-    def _init_(self):
+    def __init__(self):
         super()._init_()
         self.title("Tour Musical") 
         self.geometry("800,600")
@@ -28,14 +28,14 @@ class ListaDeEventosApp(tk,Tk):
 
         self.create_widgets()
 
-    def create_widgets(self):
+    
         self.event_listbox = tk.Listbox(self)
         self.event_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.event_listbox.bind("<<ListboxSelect>>", self.show_event_details)
         self.event_details_label = tk.Label(self, text="Detalles del evento")
         self.event_details_label.pack()
 
-        self.map_view = mapview(self, width=400, height=400)
+        self.map_view = tkintermapview(self, width=400, height=400)
         self.map_view.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
         self.load_event_list()
@@ -63,7 +63,7 @@ def create_widgets(self):
         self.event_details_label = tk.Label(self, text="Detalles del evento")
         self.event_details_label.pack()
 
-        self.map_view = mapview(self, width=400, height=400)
+        self.map_view = tkintermapview(self, width=400, height=400)
         self.map_view.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
         self.load_event_list()
