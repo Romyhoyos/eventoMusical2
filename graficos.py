@@ -18,7 +18,7 @@ raiz.config(bg="#ffc8dd")
 
 class ListaDeEventosApp(tk.Tk):
     def __init__(self):
-        super().__init__()
+        super()._init_()
         self.title("Tour Musical") 
         self.geometry("800x600")
 
@@ -26,7 +26,6 @@ class ListaDeEventosApp(tk.Tk):
         self.filtered_events = self.events
 
         self.create_widgets()
-
     
         self.event_listbox = tk.Listbox(self)
         self.event_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
@@ -54,7 +53,8 @@ class ListaDeEventosApp(tk.Tk):
             selected_event = self.filtered_events[selected_index[0]]
             self.event_details_label.config(text=f"Nombre: {selected_event['nombre']}\nArtista: {selected_event['artista']}\nGénero: {selected_event['genero']}\nUbicación: {selected_event['ubicacion']}")
             self.map_view.show_location(selected_event["ubicacion"])
-def create_widgets(self):
+    
+    def create_widgets(self):
         self.event_listbox = tk.Listbox(self)
         self.event_listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.event_listbox.bind("<<ListboxSelect>>", self.show_event_details)
@@ -82,23 +82,23 @@ def create_widgets(self):
         self.negative_button = tk.Button(self, text="😔", command=lambda: self.set_mood("negativo"))
         self.negative_button.pack(side=tk.LEFT)
 
-def load_events(self):
+    def load_events(self):
         with open("eventos.json") as f:
             return json.load(f)
 
-def load_event_list(self):
+    def load_event_list(self):
         self.event_listbox.delete(0, tk.END)
         for event in self.filtered_events:
             self.event_listbox.insert(tk.END, event["nombre"])
 
-def show_event_details(self, event):
+    def show_event_details(self, event):
         selected_index = self.event_listbox.curselection()
         if selected_index:
             selected_event = self.filtered_events[selected_index[0]]
             self.event_details_label.config(text=f"Nombre: {selected_event['nombre']}\nArtista: {selected_event['artista']}\nGénero: {selected_event['genero']}\nUbicación: {selected_event['ubicacion']}")
             self.map_view.show_location(selected_event["ubicacion"])
 
-def write_review(self):
+    def write_review(self):
         selected_index = self.event_listbox.curselection()
         if selected_index:
             selected_event = self.filtered_events[selected_index[0]]
@@ -115,15 +115,18 @@ def write_review(self):
             submit_button = tk.Button(review_window, text="Enviar", command=lambda: self.submit_review(selected_event, review_text.get("1.0", tk.END)))
             submit_button.pack()
 
-def submit_review(self, event, review):
+    def submit_review(self, event, review):
         # Aquí puedes guardar la reseña y la calificación en tu base de datos
         print(f"Reseña enviada para {event['nombre']}: {review}")
 
-def show_attended_events(self):
+    def show_attended_events(self):
         # Aquí puedes mostrar el historial de eventos a los que ha asistido el usuario
         print("Historial de eventos asistidos")
 
-def set_mood(self, mood):
+    def set_mood(self, mood):
         self.mood_label.config(text=f"Estado de Ánimo del Comentario: {mood}")
+
+
 app = ListaDeEventosApp()
+
 app.mainloop()
