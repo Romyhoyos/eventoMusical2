@@ -16,12 +16,11 @@ raiz.geometry("650x350")
 
 raiz.config(bg="#ffc8dd")
 
-class ListaDeEventosApp(tk,Tk):
-
+class ListaDeEventosApp(tk.Tk):
     def __init__(self):
-        super()._init_()
+        super().__init__()
         self.title("Tour Musical") 
-        self.geometry("800,600")
+        self.geometry("800x600")
 
         self.events = self.load_events()
         self.filtered_events = self.events
