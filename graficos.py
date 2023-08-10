@@ -1,3 +1,4 @@
+from tkinter import tkinter
 from tkinter import *
 from tkinter import tkintermapview
 from tkinter import mapview
