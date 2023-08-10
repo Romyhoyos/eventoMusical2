@@ -10,4 +10,6 @@ raiz.iconbitmap("img/musica.ico")
 
 raiz.geometry("650x350")
 
+raiz.config(bg="9F93A3")
+
 raiz.mainloop()
