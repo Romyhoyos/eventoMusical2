@@ -1,7 +1,6 @@
 from tkinter import *
 import tkinter as tk
 
-raiz=tk.Tk()
 
 raiz=Tk()
 
