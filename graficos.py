@@ -8,6 +8,6 @@ raiz.resizable(True,False)
 
 raiz.geometry("650x350")
 
-raiz.config(bg="rosa pálido")
+raiz.config(bg="#ffc8dd")
 
 raiz.mainloop()
