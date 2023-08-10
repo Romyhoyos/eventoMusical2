@@ -1,8 +1,7 @@
-from tkinter import tkinter
 from tkinter import *
-from tkinter import tkintermapview
-from tkinter import mapview
 
+from tkinter import TkinterMapView 
+import tkinter as mapview
 import tkinter as tk
 import json
 
