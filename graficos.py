@@ -1,10 +1,10 @@
 from tkinter import *
 import tkinter as tk
 
-
+raiz=tk.Tk()
 raiz=Tk()
 
-raiz.title=tk.Label(text="Eventos Musicales", font=("Roboto", 12), bg="#2F242C")
+raiz.title=tk.Label(raiz, text="Eventos Musicales", font=("Roboto", 12), bg="#2F242C")
 
 raiz.resizable(True,False)
 
